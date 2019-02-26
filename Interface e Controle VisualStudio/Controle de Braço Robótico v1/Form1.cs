@@ -12,9 +12,9 @@ namespace Controle_de_Braço_Robótico_v1
         ControleSerial Comununicacao = new ControleSerial();//Instanciando a classe para comunicação serial
 
         int BaudRate = 0;
-        String ComPort = "";
-
-        String retorno = "";
+        string ComPort = "";
+        int numPos = 6;
+        string retorno = "";
 
         public Form1()
         {
@@ -97,9 +97,54 @@ namespace Controle_de_Braço_Robótico_v1
             listBox.Items.Clear();
         }
 
+        private void Btt_Mover_Click(object sender, EventArgs e)
+        {
+            int[] posicao = new int[numPos];
+
+            posicao[0] = tb_Garra.Value;
+            posicao[1] = tb_Pulso_Rotacao.Value;
+            posicao[2] = tb_Pulso.Value;
+            posicao[3] = tb_Cotovelo.Value;
+            posicao[4] = tb_Ombro.Value;
+            posicao[5] = tb_Tronco.Value;
+
+            if (cb_Mover.Checked)
+            {
+                Controle controle = new Controle();
+                controle.Concat(posicao);
+            }
+        }
+
+        private void cb_Mover_CheckedChanged(object sender, EventArgs e)
+        {
+            timer1.Interval = 100;
+            timer1.Start();
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            int[] posicao = new int[numPos];
+
+            posicao[0] = tb_Garra.Value;
+            posicao[1] = tb_Pulso_Rotacao.Value;
+            posicao[2] = tb_Pulso.Value;
+            posicao[3] = tb_Cotovelo.Value;
+            posicao[4] = tb_Ombro.Value;
+            posicao[5] = tb_Tronco.Value;
+
+            if (!cb_Mover.Checked)
+            {
+                Controle controle = new Controle();
+                controle.Concat(posicao);
+            }
+        }
+
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             retorno = Comununicacao.DesligarServos(BaudRate, ComPort);
         }
+
+        
     }
 }

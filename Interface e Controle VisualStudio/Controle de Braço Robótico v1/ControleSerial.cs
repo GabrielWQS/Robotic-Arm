@@ -13,7 +13,7 @@ namespace Controle_de_Braço_Robótico_v1
         Mensagem Msg = new Mensagem();
         Conexão Conn = new Conexão();
 
-        public string LigarServos(int baud, String COM)
+        public string LigarServos(int baud, string COM)
         {
             string result = "";
 
@@ -34,7 +34,7 @@ namespace Controle_de_Braço_Robótico_v1
             return result + "START";
         }
 
-        public string DesligarServos(int baud, String COM)
+        public string DesligarServos(int baud, string COM)
         {
             string result = "";
 
@@ -55,12 +55,17 @@ namespace Controle_de_Braço_Robótico_v1
             return result + "STOP";
         }
 
-        public void EnviarDados(int baud, String COM, String movimento)
+        public void EnviarDados()
+        {
+            EnviarDados(1, "", "");
+        }
+
+        public void EnviarDados(int baud, string COM, string movimento)
         {
 
         }
 
-        public void Velocidade(int baud, String COM, int v)
+        public void Velocidade(int baud, string COM, int v)
         {
 
         }

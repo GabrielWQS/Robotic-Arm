@@ -33,3 +33,4 @@ D:\Programação\Repositório\robotic-arm-\Interface e Controle VisualStudio\Con
 D:\Programação\Repositório\robotic-arm-\Interface e Controle VisualStudio\Controle de Braço Robótico v1\obj\Debug\Controle de Braço Robótico v1.csproj.CopyComplete
 D:\Programação\Repositório\robotic-arm-\Interface e Controle VisualStudio\Controle de Braço Robótico v1\obj\Debug\Controle de Braço Robótico v1.exe
 D:\Programação\Repositório\robotic-arm-\Interface e Controle VisualStudio\Controle de Braço Robótico v1\obj\Debug\Controle de Braço Robótico v1.pdb
+D:\Programação\Repositório\robotic-arm-\Interface e Controle VisualStudio\Controle de Braço Robótico v1\obj\Debug\Controle de Braço Robótico v1.csprojAssemblyReference.cache
