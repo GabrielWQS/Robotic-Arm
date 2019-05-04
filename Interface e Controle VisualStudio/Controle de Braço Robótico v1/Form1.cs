@@ -111,7 +111,7 @@ namespace Controle_de_Braço_Robótico_v1
             if (cb_Mover.Checked)
             {
                 Controle controle = new Controle();
-                controle.Concat(posicao);
+                controle.Move_Arm(posicao);
             }
         }
 
@@ -136,7 +136,7 @@ namespace Controle_de_Braço_Robótico_v1
             if (!cb_Mover.Checked)
             {
                 Controle controle = new Controle();
-                controle.Concat(posicao);
+                //controle.Concat(posicao);
             }
         }
 
@@ -144,7 +144,5 @@ namespace Controle_de_Braço_Robótico_v1
         {
             retorno = Comununicacao.DesligarServos(BaudRate, ComPort);
         }
-
-        
     }
 }

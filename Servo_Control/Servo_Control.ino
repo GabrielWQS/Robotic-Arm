@@ -1,96 +1,136 @@
 #include <Servo.h>
 #include <Wire.h>
-#include <Adafruit_PWMServoDriver.h> //Necessário adicionar a biblioteca Adafruit PWMServoDriver
+#include <Adafruit_PWMServoDriver.h> //Necessário instalar adicionar a biblioteca Adafruit PWMServoDriver
 
 Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver(0x41);
 
 // Comprimento Minímo e Máximo do pulso
-#define SERVO_0_MIN  110
+#define SERVO_0_MIN  110 
 #define SERVO_0_MAX  535 
-#define SERVO_1_MIN  110
+#define SERVO_1_MIN  110 
 #define SERVO_1_MAX  535
-#define SERVO_2_MIN  110
+#define SERVO_2_MIN  110 
 #define SERVO_2_MAX  535
-#define SERVO_3_MIN  110
+#define SERVO_3_MIN  110 
 #define SERVO_3_MAX  535
-#define SERVO_4_MIN  110
+#define SERVO_4_MIN  110 
 #define SERVO_4_MAX  535
 
+
 // our servo # counter
-uint8_t servo_0 = 0, servo_1 = 1, servo_2 = 2, servo_3 = 3, servo_4 = 4;
 
-int posicao_0 = 322, posicao_1_2 = 322, posicao_3 = 322;
+int position_0 = 0, position_1 = 0, position_2 = 0, position_3 = 0;
+double pulselength_0 = 0, pulselength_1 = 0, pulselength_2 = 0, pulselength_3 = 0; 
 
-char entrada;
+int cont = 0;
+bool enable = false, servoStart = false, servoEnd = false;
 
 void setup() 
 {
   Serial.begin(9600);
-  Serial.println("16 channel Servo test!");
+  Serial.println("Robotic Arm by Gabriel Wallace");
   pwm.begin(); 
   pwm.setPWMFreq(60);  // Analog servos run at ~60 Hz updates
-  Serial.println("Pressione W ou D para movimentar a Garra");
 }
 
-void setServoPulse(uint8_t n, double pulse) 
+String readSerialString()
 {
-  double pulselength;
+  String myString = "";
+  String myServoString = "";
+  char caracter;
   
-  pulselength = 1000000;   // 1,000,000 us per second
-  pulselength /= 60;   // 60 Hz
-  Serial.print(pulselength); Serial.println(" us per period"); 
-  pulselength /= 4096;  // 12 bits of resolution
-  Serial.print(pulselength); Serial.println(" us per bit"); 
-  pulse *= 1000;
-  pulse /= pulselength;
-  Serial.println(pulse);
-  pwm.setPWM(n, 0, pulse);
+  while(Serial.available() > 0) 
+  {
+    caracter = Serial.read();
+
+    if(caracter == '[')//Se for igual a '[' inicio do comando para os servos
+      servoStart = true;
+    if(caracter == ']')//Se for igual a ']' final do comando para os servos
+      servoEnd = true;
+      
+    if (caracter != '\n' && servoStart == false)
+      myString.concat(caracter);
+    if(servoStart == true)//Salva apenas string para os servos
+      myServoString.concat(caracter);
+      
+    delay(10);//buffer
+  }
+    
+  Serial.println("myString: " + myString);
+  Serial.println("myServoString: " + myServoString);
+
+  if(servoStart == true && servoEnd == true)
+  {
+    setNextPosition(myServoString);
+  }  
+
+  servoStart = false;
+  servoEnd = false;
+  
+  return myString;
+}
+
+void setNextPosition(String myServoString)
+{
+  cont = 0;
+  position_0 = getPosition(cont, myServoString); 
+  position_1 = getPosition(cont, myServoString); 
+  position_2 = getPosition(cont, myServoString);
+  position_3 = getPosition(cont, myServoString);  
+}
+
+int getPosition(int i, String v)
+{
+  String posString = "";
+  cont++;
+  while(v[cont] != '|')
+  {
+    posString.concat(v[cont]);
+    cont++;
+  }
+
+  return posString.toInt();
 }
 
 void loop() 
 {
     if(Serial.available()>0)
   {
-      //    Base
-      entrada = Serial.read();
-      Serial.print("Tecla pressionada: ");
-      Serial.println(entrada);
+      String input = readSerialString();
       
-      if(entrada == 'a' && posicao_0 > SERVO_0_MIN)
+      if(input == "START")//Se receber 'START' os próximos comandos serão aceitos
       {
-        pwm.setPWM(servo_0, 0, --posicao_0);
-        Serial.println("Servo Base: ");Serial.println(posicao_0);
+        enable = true;
+        Serial.println("Enable = true");
       }
-      if(entrada == 'd' && posicao_0 < SERVO_0_MAX)
-      {
-        pwm.setPWM(servo_0, 0, ++posicao_0);
-        Serial.println("Servo Base: "); Serial.println(posicao_0);
-      }
-      
-      //    Junta Dupla
-      if(entrada == 'w' && posicao_1_2 > SERVO_1_MIN)
-      {
-        pwm.setPWM(servo_1, 0, --posicao_1_2);
-        pwm.setPWM(servo_2, 0, --posicao_1_2);
-        Serial.println("Servo Junta Dupla: ");Serial.println(posicao_1_2);
-      }
-      if(entrada == 's' && posicao_1_2 < SERVO_1_MAX)
-      {
-        pwm.setPWM(servo_1, 0, ++posicao_1_2);
-        pwm.setPWM(servo_2, 0, ++posicao_1_2);
-        Serial.println("Servo Junta Dupla: ");Serial.println(posicao_1_2);
-      }
+        else if(input == "STOP")//Se receber 'STOP' nenhum comando será executado
+        {
+          enable = false;
+          Serial.println("Enable = false");
+        }
 
-      //    Junta
-      if(entrada == 'q' && posicao_3 > SERVO_3_MIN)
+      if(enable)//
       {
-        pwm.setPWM(servo_3, 0, --posicao_3);
-        Serial.println("Servo Junta: ");Serial.println(posicao_3);
-      }
-      if(entrada == 'e' && posicao_3 < SERVO_3_MAX)
-      {
-        pwm.setPWM(servo_3, 0, ++posicao_3);
-        Serial.println("Servo Junta: "); Serial.println(posicao_3);
+        pulselength_0 = map(position_0, 0, 180, SERVO_0_MIN, SERVO_0_MAX);
+        pulselength_1 = map(position_1, 0, 180, SERVO_1_MIN, SERVO_1_MAX);
+        pulselength_2 = map(position_2, 0, 180, SERVO_2_MIN, SERVO_2_MAX);
+        pulselength_3 = map(position_3, 0, 180, SERVO_3_MIN, SERVO_3_MAX);
+        
+        //pwm.setPWM(0, 0, pulselength_0);
+        //pwm.setPWM(1, 0, pulselength_1);
+        //pwm.setPWM(2, 0, pulselength_2);
+        //pwm.setPWM(3, 0, pulselength_3);
+
+        Serial.println(position_0);
+        Serial.println(position_1);
+        Serial.println(position_2);
+        Serial.println(position_3);
+
+        Serial.println(pulselength_0);
+        Serial.println(pulselength_1);
+        Serial.println(pulselength_2);
+        Serial.println(pulselength_3);
+
       }
   }
 }

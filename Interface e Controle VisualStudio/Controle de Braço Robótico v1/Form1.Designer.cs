@@ -138,7 +138,7 @@
             this.groupBox_Garra.Controls.Add(this.label4);
             this.groupBox_Garra.Controls.Add(this.label3);
             this.groupBox_Garra.Controls.Add(this.tb_Garra);
-            this.groupBox_Garra.Location = new System.Drawing.Point(449, 12);
+            this.groupBox_Garra.Location = new System.Drawing.Point(198, 12);
             this.groupBox_Garra.Name = "groupBox_Garra";
             this.groupBox_Garra.Size = new System.Drawing.Size(418, 75);
             this.groupBox_Garra.TabIndex = 10;
@@ -152,7 +152,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 13);
             this.label4.TabIndex = 5;
-            this.label4.Text = "150";
+            this.label4.Text = "180";
             // 
             // label3
             // 
@@ -168,7 +168,7 @@
             this.groupBox_Pulso_Rotacao.Controls.Add(this.label10);
             this.groupBox_Pulso_Rotacao.Controls.Add(this.label5);
             this.groupBox_Pulso_Rotacao.Controls.Add(this.tb_Pulso_Rotacao);
-            this.groupBox_Pulso_Rotacao.Location = new System.Drawing.Point(449, 93);
+            this.groupBox_Pulso_Rotacao.Location = new System.Drawing.Point(198, 93);
             this.groupBox_Pulso_Rotacao.Name = "groupBox_Pulso_Rotacao";
             this.groupBox_Pulso_Rotacao.Size = new System.Drawing.Size(418, 75);
             this.groupBox_Pulso_Rotacao.TabIndex = 11;
@@ -182,7 +182,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(25, 13);
             this.label10.TabIndex = 6;
-            this.label10.Text = "150";
+            this.label10.Text = "180";
             // 
             // label5
             // 
@@ -204,7 +204,7 @@
             // 
             // tb_Pulso
             // 
-            this.tb_Pulso.Location = new System.Drawing.Point(6, 19);
+            this.tb_Pulso.Location = new System.Drawing.Point(6, 18);
             this.tb_Pulso.Maximum = 150;
             this.tb_Pulso.Name = "tb_Pulso";
             this.tb_Pulso.Size = new System.Drawing.Size(358, 45);
@@ -216,7 +216,7 @@
             this.groupBox_Pulso.Controls.Add(this.label11);
             this.groupBox_Pulso.Controls.Add(this.label8);
             this.groupBox_Pulso.Controls.Add(this.tb_Pulso);
-            this.groupBox_Pulso.Location = new System.Drawing.Point(449, 174);
+            this.groupBox_Pulso.Location = new System.Drawing.Point(198, 174);
             this.groupBox_Pulso.Name = "groupBox_Pulso";
             this.groupBox_Pulso.Size = new System.Drawing.Size(418, 75);
             this.groupBox_Pulso.TabIndex = 12;
@@ -230,7 +230,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(25, 13);
             this.label11.TabIndex = 7;
-            this.label11.Text = "150";
+            this.label11.Text = "180";
             // 
             // label8
             // 
@@ -255,7 +255,7 @@
             this.groupBox_Cotovelo.Controls.Add(this.label12);
             this.groupBox_Cotovelo.Controls.Add(this.label6);
             this.groupBox_Cotovelo.Controls.Add(this.tb_Cotovelo);
-            this.groupBox_Cotovelo.Location = new System.Drawing.Point(449, 255);
+            this.groupBox_Cotovelo.Location = new System.Drawing.Point(198, 255);
             this.groupBox_Cotovelo.Name = "groupBox_Cotovelo";
             this.groupBox_Cotovelo.Size = new System.Drawing.Size(418, 75);
             this.groupBox_Cotovelo.TabIndex = 12;
@@ -269,7 +269,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(25, 13);
             this.label12.TabIndex = 9;
-            this.label12.Text = "150";
+            this.label12.Text = "180";
             // 
             // label6
             // 
@@ -294,7 +294,7 @@
             this.groupBox_Ombro.Controls.Add(this.label13);
             this.groupBox_Ombro.Controls.Add(this.label7);
             this.groupBox_Ombro.Controls.Add(this.tb_Ombro);
-            this.groupBox_Ombro.Location = new System.Drawing.Point(449, 336);
+            this.groupBox_Ombro.Location = new System.Drawing.Point(198, 336);
             this.groupBox_Ombro.Name = "groupBox_Ombro";
             this.groupBox_Ombro.Size = new System.Drawing.Size(418, 75);
             this.groupBox_Ombro.TabIndex = 12;
@@ -308,7 +308,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(25, 13);
             this.label13.TabIndex = 10;
-            this.label13.Text = "150";
+            this.label13.Text = "180";
             // 
             // label7
             // 
@@ -333,7 +333,7 @@
             this.groupBox_Tronco.Controls.Add(this.label14);
             this.groupBox_Tronco.Controls.Add(this.label9);
             this.groupBox_Tronco.Controls.Add(this.tb_Tronco);
-            this.groupBox_Tronco.Location = new System.Drawing.Point(449, 417);
+            this.groupBox_Tronco.Location = new System.Drawing.Point(198, 417);
             this.groupBox_Tronco.Name = "groupBox_Tronco";
             this.groupBox_Tronco.Size = new System.Drawing.Size(418, 75);
             this.groupBox_Tronco.TabIndex = 12;
@@ -347,7 +347,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(25, 13);
             this.label14.TabIndex = 11;
-            this.label14.Text = "150";
+            this.label14.Text = "180";
             // 
             // label9
             // 
@@ -361,9 +361,9 @@
             // groupBox_Posicoes_Salva
             // 
             this.groupBox_Posicoes_Salva.Controls.Add(this.btt_PosicaoInicial);
-            this.groupBox_Posicoes_Salva.Location = new System.Drawing.Point(198, 12);
+            this.groupBox_Posicoes_Salva.Location = new System.Drawing.Point(15, 306);
             this.groupBox_Posicoes_Salva.Name = "groupBox_Posicoes_Salva";
-            this.groupBox_Posicoes_Salva.Size = new System.Drawing.Size(245, 480);
+            this.groupBox_Posicoes_Salva.Size = new System.Drawing.Size(177, 215);
             this.groupBox_Posicoes_Salva.TabIndex = 15;
             this.groupBox_Posicoes_Salva.TabStop = false;
             this.groupBox_Posicoes_Salva.Text = "POSIÇÕES SALVAS";
@@ -381,7 +381,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(873, 29);
+            this.label1.Location = new System.Drawing.Point(622, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 17;
@@ -390,7 +390,7 @@
             // listBox
             // 
             this.listBox.FormattingEnabled = true;
-            this.listBox.Location = new System.Drawing.Point(876, 66);
+            this.listBox.Location = new System.Drawing.Point(625, 66);
             this.listBox.Name = "listBox";
             this.listBox.Size = new System.Drawing.Size(346, 459);
             this.listBox.TabIndex = 18;
@@ -429,7 +429,7 @@
             // 
             // btt_Limpar
             // 
-            this.btt_Limpar.Location = new System.Drawing.Point(1147, 29);
+            this.btt_Limpar.Location = new System.Drawing.Point(896, 29);
             this.btt_Limpar.Name = "btt_Limpar";
             this.btt_Limpar.Size = new System.Drawing.Size(75, 23);
             this.btt_Limpar.TabIndex = 22;
@@ -449,7 +449,7 @@
             // 
             // btt_Mover
             // 
-            this.btt_Mover.Location = new System.Drawing.Point(653, 498);
+            this.btt_Mover.Location = new System.Drawing.Point(402, 498);
             this.btt_Mover.Name = "btt_Mover";
             this.btt_Mover.Size = new System.Drawing.Size(82, 23);
             this.btt_Mover.TabIndex = 24;
@@ -460,7 +460,7 @@
             // cb_Mover
             // 
             this.cb_Mover.AutoSize = true;
-            this.cb_Mover.Location = new System.Drawing.Point(500, 502);
+            this.cb_Mover.Location = new System.Drawing.Point(249, 502);
             this.cb_Mover.Name = "cb_Mover";
             this.cb_Mover.Size = new System.Drawing.Size(147, 17);
             this.cb_Mover.TabIndex = 25;
@@ -476,7 +476,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 537);
+            this.ClientSize = new System.Drawing.Size(984, 537);
             this.Controls.Add(this.cb_Mover);
             this.Controls.Add(this.btt_Mover);
             this.Controls.Add(this.Btt_DesligarServo);
@@ -493,8 +493,8 @@
             this.Controls.Add(this.groupBox_Pulso_Rotacao);
             this.Controls.Add(this.groupBox_Garra);
             this.Controls.Add(this.groupBox_Serial);
-            this.MaximumSize = new System.Drawing.Size(1250, 576);
-            this.MinimumSize = new System.Drawing.Size(1250, 576);
+            this.MaximumSize = new System.Drawing.Size(1000, 576);
+            this.MinimumSize = new System.Drawing.Size(1000, 576);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);

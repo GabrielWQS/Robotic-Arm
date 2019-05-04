@@ -20,18 +20,18 @@ namespace Controle_de_Braço_Robótico_v1
             try
             {
                 this.SerialComPort = Conn.Conectar(baud, COM);
-                SerialComPort.WriteLine("START");  //Linha para envio de informação pela Serial
+                SerialComPort.WriteLine("START\n");  //Linha para envio de informação pela Serial
                 SerialComPort.Close(); //Fecha Porta Serial
                 Conn.Encerrar();
 
-                result = Msg.MensagemSucesso(101);
+                result = Msg.retonaMensagem(101);
             }
             catch
             {
-                result = Msg.MensagemErro(101);
+                result = Msg.retonaMensagem(201);
             }
 
-            return result + "START";
+            return result + " [START]";
         }
 
         public string DesligarServos(int baud, string COM)
@@ -41,18 +41,18 @@ namespace Controle_de_Braço_Robótico_v1
             try
             {
                 this.SerialComPort = Conn.Conectar(baud, COM);
-                SerialComPort.WriteLine("STOP");  //Linha para envio de informação pela Serial
+                SerialComPort.WriteLine("STOP\n");  //Linha para envio de informação pela Serial
                 SerialComPort.Close(); //Fecha Porta Serial
                 Conn.Encerrar();
 
-                result = Msg.MensagemSucesso(101);
+                result = Msg.retonaMensagem(101);
             }
             catch
             {
-                result = Msg.MensagemErro(101);
+                result = Msg.retonaMensagem(201);
             }
 
-            return result + "STOP";
+            return result + " [STOP]";
         }
 
         public void EnviarDados()

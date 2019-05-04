@@ -19,6 +19,7 @@ namespace Controle_de_Braço_Robótico_v1
         {          
             posicao[0] = 50;    //Tronco
             posicao[1] = 40;    //Ombro
+            posicao[2] = 40;    //Ombro
             posicao[3] = 0;     //Cotovelo
             posicao[4] = 170;   //Pulso
             posicao[5] = 10;    //Rotação Pulso
@@ -34,13 +35,16 @@ namespace Controle_de_Braço_Robótico_v1
         {
             string movimento;
 
-            movimento = "M " + 
+            movimento = 
+                "[" + 
                 Convert.ToString(posicao[0]) + "|" +
                 Convert.ToString(posicao[1]) + "|" +
                 Convert.ToString(posicao[2]) + "|" +
                 Convert.ToString(posicao[3]) + "|" +
                 Convert.ToString(posicao[4]) + "|" +
-                Convert.ToString(posicao[5]);
+                Convert.ToString(posicao[5]) + "|" +
+                Convert.ToString(posicao[6]) + "|"
+                + "]" ;
 
             return movimento;
         }

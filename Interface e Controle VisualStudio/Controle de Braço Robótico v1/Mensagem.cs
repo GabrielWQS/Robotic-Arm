@@ -9,32 +9,11 @@ namespace Controle_de_Braço_Robótico_v1
     class Mensagem
     {
         string result = "";
-        public string MensagemErro(int msgID)
+        public string retonaMensagem(int msgID)
         {
             switch (msgID)
             {
-                case 100:
-                    result = "Ocorreu um erro na configuração serial";
-                    break;
-                case 101:
-                    result = "Ocorreu um erro no envio pela serial - WriteLine: ";
-                    break;
-                case 102:
-                    result = "Ocorreu um erro ao encerrar a conexão serial";
-                    break;
-
-                default:
-                    result = "Erro não definido";
-                    break;
-            }
-
-            return result;
-        }
-
-        public string MensagemSucesso(int msgID)
-        {
-            switch (msgID)
-            {
+                //Sucesso
                 case 100:
                     result = "Conexão serial definida";
                     break;
@@ -45,22 +24,19 @@ namespace Controle_de_Braço_Robótico_v1
                     result = "Conexão serial encerrada";
                     break;
 
-                default:
-                    break;
-            }
-
-            return result;
-        }
-
-        public string MensagemInfo(int msgID)
-        {
-            switch (msgID)
-            {
-                case 101:
+                //Erro
+                case 200:
                     result = "Ocorreu um erro na configuração serial";
                     break;
+                case 201:
+                    result = "Ocorreu um erro no envio pela serial - WriteLine: ";
+                    break;
+                case 202:
+                    result = "Ocorreu um erro ao encerrar a conexão serial";
+                    break;
 
                 default:
+                    result = "Erro não definido";
                     break;
             }
 
