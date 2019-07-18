@@ -16,7 +16,7 @@ namespace Controle_de_Braço_Robótico_v1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new RoboticArm());
         }
     }
 }

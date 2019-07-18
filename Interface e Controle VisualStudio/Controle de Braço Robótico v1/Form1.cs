@@ -7,7 +7,7 @@ using System.IO.Ports; //necessário incluir para acessar os periféricos = Seri
 
 namespace Controle_de_Braço_Robótico_v1
 {
-    public partial class Form1 : Form
+    public partial class RoboticArm : Form
     {
         ControleSerial Comununicacao = new ControleSerial();//Instanciando a classe para comunicação serial
 
@@ -16,7 +16,7 @@ namespace Controle_de_Braço_Robótico_v1
         int numPos = 6;
         string retorno = "";
 
-        public Form1()
+        public RoboticArm()
         {
             InitializeComponent();
 

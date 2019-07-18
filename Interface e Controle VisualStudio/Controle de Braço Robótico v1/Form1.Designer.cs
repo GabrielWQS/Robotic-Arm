@@ -1,6 +1,6 @@
 ﻿namespace Controle_de_Braço_Robótico_v1
 {
-    partial class Form1
+    partial class RoboticArm
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -472,7 +472,7 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Form1
+            // RoboticArm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -495,7 +495,7 @@
             this.Controls.Add(this.groupBox_Serial);
             this.MaximumSize = new System.Drawing.Size(1000, 576);
             this.MinimumSize = new System.Drawing.Size(1000, 576);
-            this.Name = "Form1";
+            this.Name = "RoboticArm";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.groupBox_Serial.ResumeLayout(false);
