@@ -47,10 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControleSerial.cs" />
-    <Compile Include="Conexão.cs" />
-    <Compile Include="Controle.cs" />
-    <Compile Include="Mensagem.cs" />
+    <Compile Include="SendData.cs" />
+    <Compile Include="DefaultMsg.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Controle_de_Braço_Robótico_v1
 {
-    class Mensagem
+    public class DefaultMsg
     {
         string result = "";
         public string retonaMensagem(int msgID)
         {
             switch (msgID)
             {
-                //Sucesso
+                //*********** Sucesso
                 case 100:
                     result = "Conexão serial definida";
                     break;
@@ -24,9 +24,9 @@ namespace Controle_de_Braço_Robótico_v1
                     result = "Conexão serial encerrada";
                     break;
 
-                //Erro
+                //*********** Erro
                 case 200:
-                    result = "Ocorreu um erro na configuração serial";
+                    result = "Ocorreu um erro ao abrir a configuração serial";
                     break;
                 case 201:
                     result = "Ocorreu um erro no envio pela serial - WriteLine: ";

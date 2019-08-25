@@ -33,7 +33,7 @@
             this.groupBox_Serial = new System.Windows.Forms.GroupBox();
             this.cBox_BaudRate = new System.Windows.Forms.ComboBox();
             this.cBox_COM = new System.Windows.Forms.ComboBox();
-            this.btt_LigarServo = new System.Windows.Forms.Button();
+            this.BTT_START_SERVO = new System.Windows.Forms.Button();
             this.tb_Garra = new System.Windows.Forms.TrackBar();
             this.groupBox_Garra = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,14 +59,14 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox_Posicoes_Salva = new System.Windows.Forms.GroupBox();
-            this.btt_PosicaoInicial = new System.Windows.Forms.Button();
+            this.BTT_INITIAL_POS = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listBox = new System.Windows.Forms.ListBox();
-            this.numUpDown_Velocidade = new System.Windows.Forms.NumericUpDown();
+            this.nUpDown_SPEED = new System.Windows.Forms.NumericUpDown();
             this.groupBox_Velocidade = new System.Windows.Forms.GroupBox();
-            this.btt_Limpar = new System.Windows.Forms.Button();
-            this.Btt_DesligarServo = new System.Windows.Forms.Button();
-            this.btt_Mover = new System.Windows.Forms.Button();
+            this.BTT_CLEAN = new System.Windows.Forms.Button();
+            this.BTT_STOP_SERVO = new System.Windows.Forms.Button();
+            this.BTT_MOVE = new System.Windows.Forms.Button();
             this.cb_Mover = new System.Windows.Forms.CheckBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox_Serial.SuspendLayout();
@@ -83,7 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tb_Tronco)).BeginInit();
             this.groupBox_Tronco.SuspendLayout();
             this.groupBox_Posicoes_Salva.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numUpDown_Velocidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUpDown_SPEED)).BeginInit();
             this.groupBox_Velocidade.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,7 +93,7 @@
             this.groupBox_Serial.Controls.Add(this.cBox_COM);
             this.groupBox_Serial.Location = new System.Drawing.Point(12, 12);
             this.groupBox_Serial.Name = "groupBox_Serial";
-            this.groupBox_Serial.Size = new System.Drawing.Size(180, 104);
+            this.groupBox_Serial.Size = new System.Drawing.Size(138, 75);
             this.groupBox_Serial.TabIndex = 0;
             this.groupBox_Serial.TabStop = false;
             this.groupBox_Serial.Text = "Comunicação Serial";
@@ -101,28 +101,28 @@
             // cBox_BaudRate
             // 
             this.cBox_BaudRate.FormattingEnabled = true;
-            this.cBox_BaudRate.Location = new System.Drawing.Point(17, 68);
+            this.cBox_BaudRate.Location = new System.Drawing.Point(9, 49);
             this.cBox_BaudRate.Name = "cBox_BaudRate";
-            this.cBox_BaudRate.Size = new System.Drawing.Size(121, 21);
+            this.cBox_BaudRate.Size = new System.Drawing.Size(81, 21);
             this.cBox_BaudRate.TabIndex = 1;
             // 
             // cBox_COM
             // 
             this.cBox_COM.FormattingEnabled = true;
-            this.cBox_COM.Location = new System.Drawing.Point(17, 41);
+            this.cBox_COM.Location = new System.Drawing.Point(9, 20);
             this.cBox_COM.Name = "cBox_COM";
-            this.cBox_COM.Size = new System.Drawing.Size(121, 21);
+            this.cBox_COM.Size = new System.Drawing.Size(81, 21);
             this.cBox_COM.TabIndex = 0;
             // 
-            // btt_LigarServo
+            // BTT_START_SERVO
             // 
-            this.btt_LigarServo.Location = new System.Drawing.Point(29, 122);
-            this.btt_LigarServo.Name = "btt_LigarServo";
-            this.btt_LigarServo.Size = new System.Drawing.Size(134, 23);
-            this.btt_LigarServo.TabIndex = 4;
-            this.btt_LigarServo.Text = "LIGAR SERVOS";
-            this.btt_LigarServo.UseVisualStyleBackColor = true;
-            this.btt_LigarServo.Click += new System.EventHandler(this.Btt_LigarServo_Click);
+            this.BTT_START_SERVO.Location = new System.Drawing.Point(12, 93);
+            this.BTT_START_SERVO.Name = "BTT_START_SERVO";
+            this.BTT_START_SERVO.Size = new System.Drawing.Size(134, 23);
+            this.BTT_START_SERVO.TabIndex = 4;
+            this.BTT_START_SERVO.Text = "LIGAR SERVOS";
+            this.BTT_START_SERVO.UseVisualStyleBackColor = true;
+            this.BTT_START_SERVO.Click += new System.EventHandler(this.Btt_StartServo_Click);
             // 
             // tb_Garra
             // 
@@ -138,7 +138,7 @@
             this.groupBox_Garra.Controls.Add(this.label4);
             this.groupBox_Garra.Controls.Add(this.label3);
             this.groupBox_Garra.Controls.Add(this.tb_Garra);
-            this.groupBox_Garra.Location = new System.Drawing.Point(198, 12);
+            this.groupBox_Garra.Location = new System.Drawing.Point(156, 12);
             this.groupBox_Garra.Name = "groupBox_Garra";
             this.groupBox_Garra.Size = new System.Drawing.Size(418, 75);
             this.groupBox_Garra.TabIndex = 10;
@@ -168,7 +168,7 @@
             this.groupBox_Pulso_Rotacao.Controls.Add(this.label10);
             this.groupBox_Pulso_Rotacao.Controls.Add(this.label5);
             this.groupBox_Pulso_Rotacao.Controls.Add(this.tb_Pulso_Rotacao);
-            this.groupBox_Pulso_Rotacao.Location = new System.Drawing.Point(198, 93);
+            this.groupBox_Pulso_Rotacao.Location = new System.Drawing.Point(156, 93);
             this.groupBox_Pulso_Rotacao.Name = "groupBox_Pulso_Rotacao";
             this.groupBox_Pulso_Rotacao.Size = new System.Drawing.Size(418, 75);
             this.groupBox_Pulso_Rotacao.TabIndex = 11;
@@ -216,7 +216,7 @@
             this.groupBox_Pulso.Controls.Add(this.label11);
             this.groupBox_Pulso.Controls.Add(this.label8);
             this.groupBox_Pulso.Controls.Add(this.tb_Pulso);
-            this.groupBox_Pulso.Location = new System.Drawing.Point(198, 174);
+            this.groupBox_Pulso.Location = new System.Drawing.Point(156, 174);
             this.groupBox_Pulso.Name = "groupBox_Pulso";
             this.groupBox_Pulso.Size = new System.Drawing.Size(418, 75);
             this.groupBox_Pulso.TabIndex = 12;
@@ -255,7 +255,7 @@
             this.groupBox_Cotovelo.Controls.Add(this.label12);
             this.groupBox_Cotovelo.Controls.Add(this.label6);
             this.groupBox_Cotovelo.Controls.Add(this.tb_Cotovelo);
-            this.groupBox_Cotovelo.Location = new System.Drawing.Point(198, 255);
+            this.groupBox_Cotovelo.Location = new System.Drawing.Point(156, 255);
             this.groupBox_Cotovelo.Name = "groupBox_Cotovelo";
             this.groupBox_Cotovelo.Size = new System.Drawing.Size(418, 75);
             this.groupBox_Cotovelo.TabIndex = 12;
@@ -294,7 +294,7 @@
             this.groupBox_Ombro.Controls.Add(this.label13);
             this.groupBox_Ombro.Controls.Add(this.label7);
             this.groupBox_Ombro.Controls.Add(this.tb_Ombro);
-            this.groupBox_Ombro.Location = new System.Drawing.Point(198, 336);
+            this.groupBox_Ombro.Location = new System.Drawing.Point(156, 336);
             this.groupBox_Ombro.Name = "groupBox_Ombro";
             this.groupBox_Ombro.Size = new System.Drawing.Size(418, 75);
             this.groupBox_Ombro.TabIndex = 12;
@@ -333,7 +333,7 @@
             this.groupBox_Tronco.Controls.Add(this.label14);
             this.groupBox_Tronco.Controls.Add(this.label9);
             this.groupBox_Tronco.Controls.Add(this.tb_Tronco);
-            this.groupBox_Tronco.Location = new System.Drawing.Point(198, 417);
+            this.groupBox_Tronco.Location = new System.Drawing.Point(156, 417);
             this.groupBox_Tronco.Name = "groupBox_Tronco";
             this.groupBox_Tronco.Size = new System.Drawing.Size(418, 75);
             this.groupBox_Tronco.TabIndex = 12;
@@ -360,28 +360,28 @@
             // 
             // groupBox_Posicoes_Salva
             // 
-            this.groupBox_Posicoes_Salva.Controls.Add(this.btt_PosicaoInicial);
-            this.groupBox_Posicoes_Salva.Location = new System.Drawing.Point(15, 306);
+            this.groupBox_Posicoes_Salva.Controls.Add(this.BTT_INITIAL_POS);
+            this.groupBox_Posicoes_Salva.Location = new System.Drawing.Point(12, 214);
             this.groupBox_Posicoes_Salva.Name = "groupBox_Posicoes_Salva";
-            this.groupBox_Posicoes_Salva.Size = new System.Drawing.Size(177, 215);
+            this.groupBox_Posicoes_Salva.Size = new System.Drawing.Size(138, 335);
             this.groupBox_Posicoes_Salva.TabIndex = 15;
             this.groupBox_Posicoes_Salva.TabStop = false;
             this.groupBox_Posicoes_Salva.Text = "POSIÇÕES SALVAS";
             // 
-            // btt_PosicaoInicial
+            // BTT_INITIAL_POS
             // 
-            this.btt_PosicaoInicial.Location = new System.Drawing.Point(6, 29);
-            this.btt_PosicaoInicial.Name = "btt_PosicaoInicial";
-            this.btt_PosicaoInicial.Size = new System.Drawing.Size(95, 23);
-            this.btt_PosicaoInicial.TabIndex = 0;
-            this.btt_PosicaoInicial.Text = "Posição Inicial";
-            this.btt_PosicaoInicial.UseVisualStyleBackColor = true;
-            this.btt_PosicaoInicial.Click += new System.EventHandler(this.Btt_PosicaoInicial_Click);
+            this.BTT_INITIAL_POS.Location = new System.Drawing.Point(6, 29);
+            this.BTT_INITIAL_POS.Name = "BTT_INITIAL_POS";
+            this.BTT_INITIAL_POS.Size = new System.Drawing.Size(126, 23);
+            this.BTT_INITIAL_POS.TabIndex = 0;
+            this.BTT_INITIAL_POS.Text = "Posição Inicial";
+            this.BTT_INITIAL_POS.UseVisualStyleBackColor = true;
+            this.BTT_INITIAL_POS.Click += new System.EventHandler(this.Btt_InitialPosition_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(622, 29);
+            this.label1.Location = new System.Drawing.Point(608, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 17;
@@ -390,28 +390,28 @@
             // listBox
             // 
             this.listBox.FormattingEnabled = true;
-            this.listBox.Location = new System.Drawing.Point(625, 66);
+            this.listBox.Location = new System.Drawing.Point(611, 32);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(346, 459);
+            this.listBox.Size = new System.Drawing.Size(346, 485);
             this.listBox.TabIndex = 18;
             // 
-            // numUpDown_Velocidade
+            // nUpDown_SPEED
             // 
-            this.numUpDown_Velocidade.Location = new System.Drawing.Point(17, 25);
-            this.numUpDown_Velocidade.Maximum = new decimal(new int[] {
+            this.nUpDown_SPEED.Location = new System.Drawing.Point(6, 25);
+            this.nUpDown_SPEED.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numUpDown_Velocidade.Minimum = new decimal(new int[] {
+            this.nUpDown_SPEED.Minimum = new decimal(new int[] {
             6,
             0,
             0,
             0});
-            this.numUpDown_Velocidade.Name = "numUpDown_Velocidade";
-            this.numUpDown_Velocidade.Size = new System.Drawing.Size(120, 20);
-            this.numUpDown_Velocidade.TabIndex = 9;
-            this.numUpDown_Velocidade.Value = new decimal(new int[] {
+            this.nUpDown_SPEED.Name = "nUpDown_SPEED";
+            this.nUpDown_SPEED.Size = new System.Drawing.Size(81, 20);
+            this.nUpDown_SPEED.TabIndex = 9;
+            this.nUpDown_SPEED.Value = new decimal(new int[] {
             10,
             0,
             0,
@@ -419,54 +419,53 @@
             // 
             // groupBox_Velocidade
             // 
-            this.groupBox_Velocidade.Controls.Add(this.numUpDown_Velocidade);
-            this.groupBox_Velocidade.Location = new System.Drawing.Point(15, 192);
+            this.groupBox_Velocidade.Controls.Add(this.nUpDown_SPEED);
+            this.groupBox_Velocidade.Location = new System.Drawing.Point(15, 151);
             this.groupBox_Velocidade.Name = "groupBox_Velocidade";
-            this.groupBox_Velocidade.Size = new System.Drawing.Size(177, 108);
+            this.groupBox_Velocidade.Size = new System.Drawing.Size(135, 57);
             this.groupBox_Velocidade.TabIndex = 11;
             this.groupBox_Velocidade.TabStop = false;
             this.groupBox_Velocidade.Text = "VELOCIDADE";
             // 
-            // btt_Limpar
+            // BTT_CLEAN
             // 
-            this.btt_Limpar.Location = new System.Drawing.Point(896, 29);
-            this.btt_Limpar.Name = "btt_Limpar";
-            this.btt_Limpar.Size = new System.Drawing.Size(75, 23);
-            this.btt_Limpar.TabIndex = 22;
-            this.btt_Limpar.Text = "LIMPAR";
-            this.btt_Limpar.UseVisualStyleBackColor = true;
-            this.btt_Limpar.Click += new System.EventHandler(this.Btt_Limpar_Click);
+            this.BTT_CLEAN.Location = new System.Drawing.Point(882, 526);
+            this.BTT_CLEAN.Name = "BTT_CLEAN";
+            this.BTT_CLEAN.Size = new System.Drawing.Size(75, 23);
+            this.BTT_CLEAN.TabIndex = 22;
+            this.BTT_CLEAN.Text = "LIMPAR";
+            this.BTT_CLEAN.UseVisualStyleBackColor = true;
+            this.BTT_CLEAN.Click += new System.EventHandler(this.Btt_Limpar_Click);
             // 
-            // Btt_DesligarServo
+            // BTT_STOP_SERVO
             // 
-            this.Btt_DesligarServo.Location = new System.Drawing.Point(29, 151);
-            this.Btt_DesligarServo.Name = "Btt_DesligarServo";
-            this.Btt_DesligarServo.Size = new System.Drawing.Size(134, 23);
-            this.Btt_DesligarServo.TabIndex = 23;
-            this.Btt_DesligarServo.Text = "DESLIGAR SERVOS";
-            this.Btt_DesligarServo.UseVisualStyleBackColor = true;
-            this.Btt_DesligarServo.Click += new System.EventHandler(this.Btt_Desligar_Click);
+            this.BTT_STOP_SERVO.Location = new System.Drawing.Point(12, 122);
+            this.BTT_STOP_SERVO.Name = "BTT_STOP_SERVO";
+            this.BTT_STOP_SERVO.Size = new System.Drawing.Size(134, 23);
+            this.BTT_STOP_SERVO.TabIndex = 23;
+            this.BTT_STOP_SERVO.Text = "DESLIGAR SERVOS";
+            this.BTT_STOP_SERVO.UseVisualStyleBackColor = true;
+            this.BTT_STOP_SERVO.Click += new System.EventHandler(this.Btt_StopServo_Click);
             // 
-            // btt_Mover
+            // BTT_MOVE
             // 
-            this.btt_Mover.Location = new System.Drawing.Point(402, 498);
-            this.btt_Mover.Name = "btt_Mover";
-            this.btt_Mover.Size = new System.Drawing.Size(82, 23);
-            this.btt_Mover.TabIndex = 24;
-            this.btt_Mover.Text = "Mover";
-            this.btt_Mover.UseVisualStyleBackColor = true;
-            this.btt_Mover.Click += new System.EventHandler(this.Btt_Mover_Click);
+            this.BTT_MOVE.Location = new System.Drawing.Point(309, 502);
+            this.BTT_MOVE.Name = "BTT_MOVE";
+            this.BTT_MOVE.Size = new System.Drawing.Size(82, 23);
+            this.BTT_MOVE.TabIndex = 24;
+            this.BTT_MOVE.Text = "Mover";
+            this.BTT_MOVE.UseVisualStyleBackColor = true;
+            this.BTT_MOVE.Click += new System.EventHandler(this.Btt_Move_Click);
             // 
             // cb_Mover
             // 
             this.cb_Mover.AutoSize = true;
-            this.cb_Mover.Location = new System.Drawing.Point(249, 502);
+            this.cb_Mover.Location = new System.Drawing.Point(156, 500);
             this.cb_Mover.Name = "cb_Mover";
             this.cb_Mover.Size = new System.Drawing.Size(147, 17);
             this.cb_Mover.TabIndex = 25;
             this.cb_Mover.Text = "Movimentar ao pressionar";
             this.cb_Mover.UseVisualStyleBackColor = true;
-            this.cb_Mover.CheckedChanged += new System.EventHandler(this.cb_Mover_CheckedChanged);
             // 
             // timer1
             // 
@@ -476,12 +475,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 537);
+            this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.cb_Mover);
-            this.Controls.Add(this.btt_Mover);
-            this.Controls.Add(this.Btt_DesligarServo);
-            this.Controls.Add(this.btt_Limpar);
-            this.Controls.Add(this.btt_LigarServo);
+            this.Controls.Add(this.BTT_MOVE);
+            this.Controls.Add(this.BTT_STOP_SERVO);
+            this.Controls.Add(this.BTT_CLEAN);
+            this.Controls.Add(this.BTT_START_SERVO);
             this.Controls.Add(this.groupBox_Velocidade);
             this.Controls.Add(this.listBox);
             this.Controls.Add(this.label1);
@@ -493,8 +492,8 @@
             this.Controls.Add(this.groupBox_Pulso_Rotacao);
             this.Controls.Add(this.groupBox_Garra);
             this.Controls.Add(this.groupBox_Serial);
-            this.MaximumSize = new System.Drawing.Size(1000, 576);
-            this.MinimumSize = new System.Drawing.Size(1000, 576);
+            this.MaximumSize = new System.Drawing.Size(1000, 600);
+            this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "RoboticArm";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -518,7 +517,7 @@
             this.groupBox_Tronco.ResumeLayout(false);
             this.groupBox_Tronco.PerformLayout();
             this.groupBox_Posicoes_Salva.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numUpDown_Velocidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUpDown_SPEED)).EndInit();
             this.groupBox_Velocidade.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -543,14 +542,14 @@
         private System.Windows.Forms.TrackBar tb_Tronco;
         private System.Windows.Forms.GroupBox groupBox_Tronco;
         private System.Windows.Forms.GroupBox groupBox_Posicoes_Salva;
-        private System.Windows.Forms.Button btt_LigarServo;
+        private System.Windows.Forms.Button BTT_START_SERVO;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBox;
-        private System.Windows.Forms.NumericUpDown numUpDown_Velocidade;
+        private System.Windows.Forms.NumericUpDown nUpDown_SPEED;
         private System.Windows.Forms.GroupBox groupBox_Velocidade;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btt_Limpar;
+        private System.Windows.Forms.Button BTT_CLEAN;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
@@ -561,9 +560,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button btt_PosicaoInicial;
-        private System.Windows.Forms.Button Btt_DesligarServo;
-        private System.Windows.Forms.Button btt_Mover;
+        private System.Windows.Forms.Button BTT_INITIAL_POS;
+        private System.Windows.Forms.Button BTT_STOP_SERVO;
+        private System.Windows.Forms.Button BTT_MOVE;
         private System.Windows.Forms.CheckBox cb_Mover;
         private System.Windows.Forms.Timer timer1;
     }
