@@ -2,26 +2,22 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-using System.IO.Ports; //necessário incluir para acessar os periféricos = SerialPort
-
+using System.IO.Ports; //necessário incluir para acessar os periféricos = SerialPortusigin 
+using Controle_de_Braço_Robótico_v1.Util;
+using Controle_de_Braço_Robótico_v1.Execute;
 
 namespace Controle_de_Braço_Robótico_v1
 {
     public partial class RoboticArm : Form
     {
-        SendData sendData = new SendData();
         SerialPort SerialPortCom = new SerialPort();
 
         int BaudRate = 0;
         string ComPort = "";
-        int numPos = 6;
-        string retorno = "";
 
         public RoboticArm()
         {
             InitializeComponent();
-
-            Config();
 
             LoadBaudRate();
             LoadComPort();    
@@ -53,36 +49,25 @@ namespace Controle_de_Braço_Robótico_v1
             cBox_BaudRate.SelectedIndex = 6; //9600bps         
         }
 
-        public void Config()
-        {
-            listBox.ClearSelected();
-            listBox.Items.Add("\t\t\t Bem Vindo!");
-            BTT_STOP_SERVO.Enabled = false;
-        }
 
         private void Btt_StartServo_Click(object sender, EventArgs e)
         {
-            BaudRate = Convert.ToInt32(cBox_BaudRate.Text);
-            ComPort = cBox_COM.Text;
+            SendData.SerialWrite(Constants.START);
 
-            SerialPortCom = new SerialPort(ComPort, BaudRate);
-            sendData.StartServos(SerialPortCom);
-
-            BTT_START_SERVO.Enabled = false;
+            BTN_START_SERVO.Enabled = false;
             BTT_STOP_SERVO.Enabled = true;
 
-            listBox.Items.Add(retorno);
+            listBox.Items.Add(Constants.START);
         }
 
         private void Btt_StopServo_Click(object sender, EventArgs e)
         {
-            BaudRate = Convert.ToInt32(cBox_BaudRate.Text);//Valor da comboBox de BaudRate
-            ComPort = cBox_COM.Text;//Porta COM
+            SendData.SerialWrite(Constants.STOP);
 
-            sendData.StopServos();
-            BTT_START_SERVO.Enabled = true;
+            BTN_START_SERVO.Enabled = true;
             BTT_STOP_SERVO.Enabled = false;
-            listBox.Items.Add(retorno);
+
+            listBox.Items.Add(Constants.STOP);
         }
 
         private void Btt_Limpar_Click(object sender, EventArgs e)
@@ -92,7 +77,7 @@ namespace Controle_de_Braço_Robótico_v1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            int[] posicao = new int[numPos];
+            int[] posicao = new int[Constants.NUMOFSERVOS];
 
             posicao[0] = tb_Garra.Value;
             posicao[1] = tb_Pulso_Rotacao.Value;
@@ -103,14 +88,14 @@ namespace Controle_de_Braço_Robótico_v1
 
             if (!cb_Mover.Checked)
             {
-                SendData controle = new SendData();
+                //SendData controle = new SendData();
                 //controle.Concat(posicao);
             }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            sendData.StopServos();
+            SendData.SerialWrite(Constants.STOP);
         }
 
         private void Btt_InitialPosition_Click(object sender, EventArgs e)
@@ -120,20 +105,35 @@ namespace Controle_de_Braço_Robótico_v1
 
         private void Btt_Move_Click(object sender, EventArgs e)
         {
-            int[] posicao = new int[numPos];
+            int[] position = new int[Constants.NUMOFSERVOS];
 
-            posicao[0] = tb_Garra.Value;
-            posicao[1] = tb_Pulso_Rotacao.Value;
-            posicao[2] = tb_Pulso.Value;
-            posicao[3] = tb_Cotovelo.Value;
-            posicao[4] = tb_Ombro.Value;
-            posicao[5] = tb_Tronco.Value;
+            position[0] = tb_Garra.Value;
+            position[1] = tb_Pulso_Rotacao.Value;
+            position[2] = tb_Pulso.Value;
+            position[3] = tb_Cotovelo.Value;
+            position[4] = tb_Ombro.Value;
+            position[5] = tb_Tronco.Value;
 
             if (cb_Mover.Checked)
             {
-                SendData controle = new SendData();
-                controle.Move_Arm(SerialPortCom, posicao);//TODO enviar conexão
+                string moviment = MovimentControl.Concat(position);
+                SendData.SerialWrite(moviment);
             }
+                
+        }
+
+        private void BTN_SAVE_Click(object sender, EventArgs e)
+        {
+            BaudRate = Convert.ToInt32(cBox_BaudRate.Text);
+            ComPort = cBox_COM.Text;
+
+            Config.SetSerialPortConfig(BaudRate, ComPort);
+
+            //testar conexão
+            //sucesso
+            //listBox.ClearSelected();
+            //listBox.Items.Add("\t\t\t Bem Vindo!");
+            //BTT_STOP_SERVO.Enabled = false;
         }
     }
 }

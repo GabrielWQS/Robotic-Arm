@@ -31,9 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.groupBox_Serial = new System.Windows.Forms.GroupBox();
+            this.BTN_SAVE = new System.Windows.Forms.Button();
             this.cBox_BaudRate = new System.Windows.Forms.ComboBox();
             this.cBox_COM = new System.Windows.Forms.ComboBox();
-            this.BTT_START_SERVO = new System.Windows.Forms.Button();
+            this.BTN_START_SERVO = new System.Windows.Forms.Button();
             this.tb_Garra = new System.Windows.Forms.TrackBar();
             this.groupBox_Garra = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -89,21 +90,32 @@
             // 
             // groupBox_Serial
             // 
+            this.groupBox_Serial.Controls.Add(this.BTN_SAVE);
             this.groupBox_Serial.Controls.Add(this.cBox_BaudRate);
             this.groupBox_Serial.Controls.Add(this.cBox_COM);
             this.groupBox_Serial.Location = new System.Drawing.Point(12, 12);
             this.groupBox_Serial.Name = "groupBox_Serial";
-            this.groupBox_Serial.Size = new System.Drawing.Size(138, 75);
+            this.groupBox_Serial.Size = new System.Drawing.Size(138, 116);
             this.groupBox_Serial.TabIndex = 0;
             this.groupBox_Serial.TabStop = false;
             this.groupBox_Serial.Text = "Comunicação Serial";
+            // 
+            // BTN_SAVE
+            // 
+            this.BTN_SAVE.Location = new System.Drawing.Point(31, 81);
+            this.BTN_SAVE.Name = "BTN_SAVE";
+            this.BTN_SAVE.Size = new System.Drawing.Size(75, 23);
+            this.BTN_SAVE.TabIndex = 2;
+            this.BTN_SAVE.Text = "SAVE";
+            this.BTN_SAVE.UseVisualStyleBackColor = true;
+            this.BTN_SAVE.Click += new System.EventHandler(this.BTN_SAVE_Click);
             // 
             // cBox_BaudRate
             // 
             this.cBox_BaudRate.FormattingEnabled = true;
             this.cBox_BaudRate.Location = new System.Drawing.Point(9, 49);
             this.cBox_BaudRate.Name = "cBox_BaudRate";
-            this.cBox_BaudRate.Size = new System.Drawing.Size(81, 21);
+            this.cBox_BaudRate.Size = new System.Drawing.Size(123, 21);
             this.cBox_BaudRate.TabIndex = 1;
             // 
             // cBox_COM
@@ -111,18 +123,18 @@
             this.cBox_COM.FormattingEnabled = true;
             this.cBox_COM.Location = new System.Drawing.Point(9, 20);
             this.cBox_COM.Name = "cBox_COM";
-            this.cBox_COM.Size = new System.Drawing.Size(81, 21);
+            this.cBox_COM.Size = new System.Drawing.Size(123, 21);
             this.cBox_COM.TabIndex = 0;
             // 
-            // BTT_START_SERVO
+            // BTN_START_SERVO
             // 
-            this.BTT_START_SERVO.Location = new System.Drawing.Point(12, 93);
-            this.BTT_START_SERVO.Name = "BTT_START_SERVO";
-            this.BTT_START_SERVO.Size = new System.Drawing.Size(134, 23);
-            this.BTT_START_SERVO.TabIndex = 4;
-            this.BTT_START_SERVO.Text = "LIGAR SERVOS";
-            this.BTT_START_SERVO.UseVisualStyleBackColor = true;
-            this.BTT_START_SERVO.Click += new System.EventHandler(this.Btt_StartServo_Click);
+            this.BTN_START_SERVO.Location = new System.Drawing.Point(12, 134);
+            this.BTN_START_SERVO.Name = "BTN_START_SERVO";
+            this.BTN_START_SERVO.Size = new System.Drawing.Size(134, 23);
+            this.BTN_START_SERVO.TabIndex = 4;
+            this.BTN_START_SERVO.Text = "LIGAR SERVOS";
+            this.BTN_START_SERVO.UseVisualStyleBackColor = true;
+            this.BTN_START_SERVO.Click += new System.EventHandler(this.Btt_StartServo_Click);
             // 
             // tb_Garra
             // 
@@ -361,16 +373,16 @@
             // groupBox_Posicoes_Salva
             // 
             this.groupBox_Posicoes_Salva.Controls.Add(this.BTT_INITIAL_POS);
-            this.groupBox_Posicoes_Salva.Location = new System.Drawing.Point(12, 214);
+            this.groupBox_Posicoes_Salva.Location = new System.Drawing.Point(12, 255);
             this.groupBox_Posicoes_Salva.Name = "groupBox_Posicoes_Salva";
-            this.groupBox_Posicoes_Salva.Size = new System.Drawing.Size(138, 335);
+            this.groupBox_Posicoes_Salva.Size = new System.Drawing.Size(138, 294);
             this.groupBox_Posicoes_Salva.TabIndex = 15;
             this.groupBox_Posicoes_Salva.TabStop = false;
             this.groupBox_Posicoes_Salva.Text = "POSIÇÕES SALVAS";
             // 
             // BTT_INITIAL_POS
             // 
-            this.BTT_INITIAL_POS.Location = new System.Drawing.Point(6, 29);
+            this.BTT_INITIAL_POS.Location = new System.Drawing.Point(6, 19);
             this.BTT_INITIAL_POS.Name = "BTT_INITIAL_POS";
             this.BTT_INITIAL_POS.Size = new System.Drawing.Size(126, 23);
             this.BTT_INITIAL_POS.TabIndex = 0;
@@ -420,7 +432,7 @@
             // groupBox_Velocidade
             // 
             this.groupBox_Velocidade.Controls.Add(this.nUpDown_SPEED);
-            this.groupBox_Velocidade.Location = new System.Drawing.Point(15, 151);
+            this.groupBox_Velocidade.Location = new System.Drawing.Point(15, 192);
             this.groupBox_Velocidade.Name = "groupBox_Velocidade";
             this.groupBox_Velocidade.Size = new System.Drawing.Size(135, 57);
             this.groupBox_Velocidade.TabIndex = 11;
@@ -439,7 +451,7 @@
             // 
             // BTT_STOP_SERVO
             // 
-            this.BTT_STOP_SERVO.Location = new System.Drawing.Point(12, 122);
+            this.BTT_STOP_SERVO.Location = new System.Drawing.Point(12, 163);
             this.BTT_STOP_SERVO.Name = "BTT_STOP_SERVO";
             this.BTT_STOP_SERVO.Size = new System.Drawing.Size(134, 23);
             this.BTT_STOP_SERVO.TabIndex = 23;
@@ -480,7 +492,7 @@
             this.Controls.Add(this.BTT_MOVE);
             this.Controls.Add(this.BTT_STOP_SERVO);
             this.Controls.Add(this.BTT_CLEAN);
-            this.Controls.Add(this.BTT_START_SERVO);
+            this.Controls.Add(this.BTN_START_SERVO);
             this.Controls.Add(this.groupBox_Velocidade);
             this.Controls.Add(this.listBox);
             this.Controls.Add(this.label1);
@@ -542,7 +554,7 @@
         private System.Windows.Forms.TrackBar tb_Tronco;
         private System.Windows.Forms.GroupBox groupBox_Tronco;
         private System.Windows.Forms.GroupBox groupBox_Posicoes_Salva;
-        private System.Windows.Forms.Button BTT_START_SERVO;
+        private System.Windows.Forms.Button BTN_START_SERVO;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBox;
         private System.Windows.Forms.NumericUpDown nUpDown_SPEED;
@@ -565,6 +577,7 @@
         private System.Windows.Forms.Button BTT_MOVE;
         private System.Windows.Forms.CheckBox cb_Mover;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button BTN_SAVE;
     }
 }
 
