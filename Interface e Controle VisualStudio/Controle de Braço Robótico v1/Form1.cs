@@ -10,8 +10,6 @@ namespace Controle_de_Braço_Robótico_v1
 {
     public partial class RoboticArm : Form
     {
-        SerialPort SerialPortCom = new SerialPort();
-
         int BaudRate = 0;
         string ComPort = "";
 
